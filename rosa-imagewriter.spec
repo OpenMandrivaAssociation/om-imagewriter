@@ -9,7 +9,7 @@ Url: https://abf.rosalinux.ru/dsilakov/rosa-imagewriter
 
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: libqt4-devel
+BuildRequires: pkgconfig(Qt3Support)
 
 %description
 Utility for writing raw disk images and hybrid isos to USB keys.
