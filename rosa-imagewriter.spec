@@ -1,7 +1,7 @@
 Name: rosa-imagewriter
 Summary: Utility for writing raw disk images and hybrid isos to USB keys
 Version: 1.10
-Release: 1
+Release: 2
 License: GPLv2
 Group:   Networking/File transfer 
 Source0: %{name}-%{version}.tar.gz
