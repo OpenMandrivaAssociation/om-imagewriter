@@ -11,7 +11,7 @@ Group:      File tools
 Requires:   %mklibname qt5core5
 Requires:   %mklibname qt5gui5
 Requires:   %mklibname qt5widgets5
-Requires:   b64qt5gui5-x11
+Requires:   %mklibname qt5gui5-x11
 BuildRequires:  qt5-devel
 BuildRequires:  qmake5
 
