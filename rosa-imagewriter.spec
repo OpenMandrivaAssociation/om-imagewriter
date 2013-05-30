@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:       rosa-imagewriter
-Summary:    Tool for creating bootable ROSA installation USB flash drives
+Summary:    Tool for writing to USB
 Version:    2.1
 Release:    1
 URL:        https://abf.rosalinux.ru/captainflint/rosa-image-writer
@@ -16,7 +16,8 @@ BuildRequires:  qt5-devel
 BuildRequires:  qmake5
 
 %description
-ROSA Image Writer is a tool for creating bootable ROSA installation USB flash drives.
+ROSA Image Writer is a tool for creating bootable ROSA installation USB flash
+drives.
 
 %prep
 %setup -q -n %{name}-%{version}
