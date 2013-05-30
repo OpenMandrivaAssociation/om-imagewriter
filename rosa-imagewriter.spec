@@ -27,8 +27,9 @@ drives.
 make
 
 %install
-install -m 0755 RosaImageWriter %{buildroot}%{_sbindir}rosa-imagewriter
+mkdir %{buildroot}%{_sbindir}
+install -m 0755 RosaImageWriter %{buildroot}%{_sbindir}/rosa-imagewriter
 
 %files
 %defattr(-,root,root)
-%{_sbindir}rosa-imagewriter
+%{_sbindir}/rosa-imagewriter
