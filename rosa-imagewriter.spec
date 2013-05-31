@@ -30,7 +30,7 @@ make
 /usr/lib/qt5/bin/lrelease RosaImageWriter.pro
 
 %install
-mkdir -p %{buildroot}%{_sbindir} %{buildroot}%{_bindir} %{buildroot}%{_libdir}/%{name}/lang %{buildroot}%{_docdir}/%{name} %{buildroot}%{_iconsdir}/hicolor/scalable/apps %{buildroot}%{_datadir}/applications
+mkdir -p %{buildroot}%{_sbindir} %{buildroot}%{_bindir} %{buildroot}%{_libdir}/%{name}/lang %{buildroot}%{_docdir}/%{name} %{buildroot}%{_iconsdir}/hicolor/scalable/apps %{buildroot}%{_datadir}/applications %{buildroot}%{_sysconfdir}/pam.d %{buildroot}%{_sysconfdir}/security/console.apps 
 install -m 0755 RosaImageWriter %{buildroot}%{_libdir}/%{name}/%{name}
 install -m 0644 lang/*.qm %{buildroot}%{_libdir}/%{name}/lang/
 install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
