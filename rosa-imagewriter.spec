@@ -30,7 +30,7 @@ make
 
 %install
 mkdir -p %{buildroot}%{_sbindir} %{buildroot}%{_bindir} %{buildroot}%{_libdir}/%{name}/lang %{buildroot}%{_docdir}/%{name}
-install -m 0755 RosaImageWriter %{buildroot}%{_libdir}/%{name}
+install -m 0755 RosaImageWriter %{buildroot}%{_libdir}/%{name}/%{name}
 install -m 0644 lang/*.qm %{buildroot}%{_libdir}/%{name}/lang/
 install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
 #ln -sf consolehelper %{buildroot}%{_bindir}/%{name}
@@ -44,12 +44,12 @@ install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
 
 cat > %{buildroot}%{_bindir}/%{name}  <<EOF
 #!/bin/sh
-kdesu %{_libdir}/%{name}
+kdesu %{_libdir}/%{name}/%{name}
 EOF
 
 cat > %{buildroot}%{_sbindir}/%{name}  <<EOF
 #!/bin/sh
-%{_libdir}/%{name}
+%{_libdir}/%{name}/%{name}
 EOF
 
 chmod 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_sbindir}/%{name}
@@ -59,5 +59,4 @@ chmod 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_sbindir}/%{name}
 %{_bindir}/%{name}
 %{_sbindir}/%{name}
 %{_libdir}/%{name}
-%{_libdir}/%{name}/lang
 %{_docdir}/%{name}
