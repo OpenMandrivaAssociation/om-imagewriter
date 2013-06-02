@@ -2,7 +2,7 @@
 
 Name:       rosa-imagewriter
 Summary:    Tool for writing ROSA installer to USB drive
-Version:    2.2
+Version:    2.3
 Release:    1
 URL:        https://abf.rosalinux.ru/captainflint/rosa-image-writer
 Source0:    %{name}-%{version}.tar.xz
