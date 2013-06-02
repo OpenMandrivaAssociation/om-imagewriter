@@ -2,8 +2,8 @@
 
 Name:       rosa-imagewriter
 Summary:    Tool for writing ROSA installer to USB drive
-Version:    2.1
-Release:    2
+Version:    2.2
+Release:    1
 URL:        https://abf.rosalinux.ru/captainflint/rosa-image-writer
 Source0:    %{name}-%{version}.tar.xz
 License:    GPL
@@ -13,6 +13,7 @@ Requires:   %mklibname qt5gui5
 Requires:   %mklibname qt5widgets5
 Requires:   %mklibname qt5gui5-x11
 Requires:   usermode-consoleonly
+BuildRequires:  gcc-c++
 BuildRequires:  qt5-devel
 BuildRequires:  qt5-linguist-tools
 BuildRequires:  qmake5
@@ -34,7 +35,7 @@ mkdir -p %{buildroot}%{_sbindir} %{buildroot}%{_bindir} %{buildroot}%{_libdir}/%
 install -m 0755 RosaImageWriter %{buildroot}%{_libdir}/%{name}/%{name}
 install -m 0644 lang/*.qm %{buildroot}%{_libdir}/%{name}/lang/
 install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
-install -m 0644 res/%{name}.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
+install -m 0644 res/icon-rosa.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
