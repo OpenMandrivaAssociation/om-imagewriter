@@ -1,6 +1,6 @@
 removed_sources:
   rosa-imagewriter-2.1.tar.xz: 00d59b6cf0eebfd1c05cdf81409aa2a8f1d9627d
   rosa-imagewriter-2.2.tar.xz: 1e902150f6a50bc5b7738ac3a3d6b4c074752152
-  rosa-imagewriter-2.3.tar.xz: f08a1e5e7424131afc558e219920bd9687a9ef6b
-sources:
   rosa-imagewriter-2.3.tar.xz: 43aff387821ee58185f41194d6963d5e1a176718
+sources:
+  rosa-imagewriter-2.3.tar.xz: b2a508f6d88f957dc381ef1028ec4dfdf501fa8c
