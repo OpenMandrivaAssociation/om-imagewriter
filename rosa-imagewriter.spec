@@ -24,9 +24,9 @@ drives.
 %setup -q -n %{name}-%{version}
 
 %build
-/usr/lib/qt5/bin/qmake
+%qmake_qt5
 make
-/usr/lib/qt5/bin/lrelease RosaImageWriter.pro
+%_qt5_bindir/lrelease RosaImageWriter.pro
 
 %install
 mkdir -p %{buildroot}%{_sbindir} %{buildroot}%{_bindir} %{buildroot}%{_libdir}/%{name}/lang %{buildroot}%{_docdir}/%{name} %{buildroot}%{_iconsdir}/hicolor/scalable/apps %{buildroot}%{_datadir}/applications %{buildroot}%{_sysconfdir}/pam.d %{buildroot}%{_sysconfdir}/security/console.apps
