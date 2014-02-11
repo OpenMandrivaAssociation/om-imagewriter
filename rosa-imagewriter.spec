@@ -15,6 +15,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  qt5-devel
 BuildRequires:  qt5-linguist-tools
 BuildRequires:  qmake5
+BuildRequires:	pkgconfig(udev)
 
 %description
 ROSA Image Writer is a tool for creating bootable ROSA installation USB flash
