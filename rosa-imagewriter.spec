@@ -1,7 +1,7 @@
 Summary:	Tool for writing ROSA installer to USB drive
 Name:		rosa-imagewriter
 Version:	2.4
-Release:	6
+Release:	7
 License:	GPLv3+
 Group:		File tools
 Url:		https://abf.rosalinux.ru/captainflint/rosa-image-writer
@@ -10,6 +10,7 @@ BuildRequires:	qmake5
 BuildRequires:	qt5-linguist-tools
 BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(udev)
+Requires:	qt5-output-driver-default
 Requires:	usermode-consoleonly
 
 %description
