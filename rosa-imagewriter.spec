@@ -1,7 +1,7 @@
 Summary:	Tool for writing ROSA installer to USB drive
 Name:		rosa-imagewriter
 Version:	2.4
-Release:	7
+Release:	9
 License:	GPLv3+
 Group:		File tools
 Url:		https://abf.rosalinux.ru/captainflint/rosa-image-writer
@@ -48,7 +48,9 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Name=ROSA Image Writer
+Name[ru]=ROSA Image Writer
 Comment=Tool for writing ROSA installer to USB drive
+Comment[ru]=Инструментарий записи загрузочных образов ROSA на USB-флэш
 Exec=%{_bindir}/%{name}
 Icon=rosa-imagewriter
 Terminal=false
