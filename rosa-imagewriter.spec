@@ -3,7 +3,7 @@
 Summary:	Tool for writing ROSA installer to USB drive
 Name:		rosa-imagewriter
 Version:	2.6.0.0
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		File tools
 Url:		https://abf.io/captainflint/%{srcname}
