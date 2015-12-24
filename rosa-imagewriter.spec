@@ -37,6 +37,9 @@ drives.
 %qmake_qt5
 make
 %{_qt5_bindir}/lrelease RosaImageWriter.pro
+
+# for lrelease
+export PATH=%{_qt5_bindir}:$PATH
 lang/build-translations
 
 %install
