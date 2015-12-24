@@ -1,12 +1,12 @@
-%global srcname rosa-image-writer
+%global srcname rosa-imagewriter
 
 Summary:	Tool for writing ROSA installer to USB drive
 Name:		rosa-imagewriter
-Version:	2.6.0.0
-Release:	3
+Version:	2.6.1.0
+Release:	1
 License:	GPLv3+
 Group:		File tools
-Url:		https://abf.io/captainflint/%{srcname}
+Url:		https://abf.io/soft/%{srcname}
 Source0:	%{url}/archive/%{srcname}-version-%{version}.tar.gz
 BuildRequires:	qmake5
 BuildRequires:	qt5-linguist-tools
@@ -37,6 +37,7 @@ drives.
 %qmake_qt5
 make
 %{_qt5_bindir}/lrelease RosaImageWriter.pro
+lang/build-translations
 
 %install
 mkdir -p                                                   \
