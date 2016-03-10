@@ -2,8 +2,8 @@
 
 Summary:	Tool for writing ROSA installer to USB drive
 Name:		rosa-imagewriter
-Version:	2.6.1.0
-Release:	2
+Version:	2.6.1.1
+Release:	1
 License:	GPLv3+
 Group:		File tools
 Url:		https://abf.io/soft/%{srcname}
@@ -14,6 +14,8 @@ BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(udev)
 Requires:	qt5-output-driver-default
 Suggests:	%mklibname udev 1
+# (tpg) needed for kdesu
+Suggests:	kde-cli-tools >= 5.5.5
 
 %description
 ROSA Image Writer is a tool for creating bootable ROSA installation USB flash
