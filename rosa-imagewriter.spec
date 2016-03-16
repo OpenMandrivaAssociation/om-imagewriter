@@ -1,9 +1,11 @@
 %global srcname rosa-imagewriter
+# lto causes crash
+%define _disable_lto 1
 
 Summary:	Tool for writing ROSA installer to USB drive
 Name:		rosa-imagewriter
 Version:	2.6.1.1
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		File tools
 Url:		https://abf.io/soft/%{srcname}
