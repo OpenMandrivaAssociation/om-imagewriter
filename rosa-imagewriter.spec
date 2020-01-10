@@ -34,7 +34,7 @@ drives.
 
 %prep
 %setup -q -n %{srcname}-version-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %qmake_qt5
