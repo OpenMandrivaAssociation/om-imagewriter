@@ -1,15 +1,16 @@
+%define _empty_manifest_terminate_build 0
 %global srcname rosa-imagewriter
 # lto causes crash
 %define _disable_lto 1
 
-Summary:	Tool for writing ROSA installer to USB drive
+Summary:	Tool for writing installer to USB drive
 Name:		rosa-imagewriter
-Version:	2.6.2.0
-Release:	2
+Version:	2.6.2.1
+Release:	1
 License:	GPLv3+
 Group:		File tools
-Url:		https://abf.io/soft/%{srcname}
-Source0:	%{url}/archive/%{srcname}-version-%{version}.tar.gz
+Url:		https://abf.io/soft/rosa-imagewriter
+Source0:	%{name}-version-%{version}.tar.gz
 BuildRequires:	qmake5
 BuildRequires:	qt5-linguist-tools
 BuildRequires:	qt5-devel
@@ -19,7 +20,7 @@ Suggests:	%mklibname udev 1
 Suggests:	kde-cli-tools >= 5.5.5
 
 %description
-ROSA Image Writer is a tool for creating bootable ROSA installation USB flash
+ROSA Image Writer is a tool for creating bootable installation USB flash
 drives.
 
 %files
@@ -64,8 +65,8 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 Version=1.0
 Name=ROSA Image Writer
 Name[ru]=ROSA Image Writer
-Comment=Tool for writing ROSA installer to USB drive
-Comment[ru]=Инструментарий записи загрузочных образов ROSA на USB-флэш
+Comment=Tool for writing installer to USB drive
+Comment[ru]=Инструментарий записи загрузочных образов на USB-флэш
 Exec=%{_libdir}/%{name}/%{name} %%U
 Icon=%{name}
 Terminal=false
