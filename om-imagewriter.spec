@@ -6,13 +6,15 @@
 %define _disable_lto 1
 
 Summary:	Tool for writing installer to USB drive
-Name:		rosa-imagewriter
-Version:	2.6.3.0
+Name:		om-imagewriter
+Version:	2.6.4.0
 Release:	1
 License:	GPLv3+
 Group:		File tools
-Url:		https://abf.io/soft/rosa-imagewriter
-Source0:	%{name}-%{version}.tar.xz
+# Original (seemingly dead) upstream: https://abf.io/soft/rosa-imagewriter
+# Another interesting fork: https://github.com/KaOSx/isowriter
+Url:		https://github.com/OpenMandrivaSoftware/om-imagewriter
+Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{version}.tar.gz
 BuildRequires:	qmake-qt6
 BuildRequires:	pkgconfig(Qt6Linguist)
 BuildRequires:	pkgconfig(Qt6Core)
@@ -22,6 +24,7 @@ BuildRequires:	pkgconfig(udev)
 Suggests:	%mklibname udev 1
 # (tpg) needed for kdesu
 Suggests:	kde-cli-tools >= 6.0.0
+%rename rosa-imagewriter
 
 %description
 ROSA Image Writer is a tool for creating bootable installation USB flash
@@ -67,8 +70,7 @@ ln -sf %{_libdir}/%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Version=1.0
-Name=ROSA Image Writer
-Name[ru]=ROSA Image Writer
+Name=OM Image Writer
 Comment=Tool for writing installer to USB drive
 Comment[ru]=Инструментарий записи загрузочных образов на USB-флэш
 Exec=%{_libdir}/%{name}/%{name} %%U
@@ -88,8 +90,8 @@ MimeType=application/x-iso;application/x-cd-image;inode/ISO-image
 
 [Desktop Action WriteIsoImageToUsb]
 Exec=%{_libdir}/%{name}/%{name} %%U
-Name=Write to USB using ROSA ImageWriter
-Name[ru]=Записать на USB, используя ROSA ImageWriter
+Name=Write to USB using OM ImageWriter
+Name[ru]=Записать на USB, используя OM ImageWriter
 Icon=%{name}
 EOF
 
