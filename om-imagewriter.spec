@@ -7,7 +7,7 @@
 
 Summary:	Tool for writing installer to USB drive
 Name:		om-imagewriter
-Version:	2.6.4.0
+Version:	2.6.4.1
 Release:	1
 License:	GPLv3+
 Group:		File tools
