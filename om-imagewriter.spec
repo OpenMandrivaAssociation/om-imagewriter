@@ -7,7 +7,7 @@
 
 Summary:	Tool for writing installer to USB drive
 Name:		om-imagewriter
-Version:	2.6.4.1
+Version:	2.6.4.2
 Release:	1
 License:	GPLv3+
 Group:		File tools
@@ -47,7 +47,7 @@ drives.
 qmake-qt6
 
 make
-%{_qt6_bindir}/lrelease RosaImageWriter.pro
+%{_qt6_bindir}/lrelease OMImageWriter.pro
 
 # for lrelease
 export PATH=%{_qt6_bindir}:$PATH
@@ -61,7 +61,7 @@ mkdir -p                                                   \
 	%{buildroot}%{_iconsdir}/hicolor/scalable/apps     \
 	%{buildroot}%{_datadir}/applications               \
 	%{buildroot}%{_datadir}/kio/servicemenus
-install -m 0755 RosaImageWriter %{buildroot}%{_libdir}/%{name}/%{name}
+install -m 0755 OMImageWriter %{buildroot}%{_libdir}/%{name}/%{name}
 install -m 0644 lang/*.qm %{buildroot}%{_libdir}/%{name}/lang/
 install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
 install -m 0644 res/icon-rosa.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
