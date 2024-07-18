@@ -27,7 +27,7 @@ Suggests:	kde-cli-tools >= 6.0.0
 %rename rosa-imagewriter
 
 %description
-ROSA Image Writer is a tool for creating bootable installation USB flash
+OpenMandriva Image Writer is a tool for creating bootable installation USB flash
 drives.
 
 %files
