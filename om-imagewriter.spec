@@ -8,7 +8,7 @@
 Summary:	Tool for writing installer to USB drive
 Name:		om-imagewriter
 Version:	2.6.4.2
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		File tools
 # Original (seemingly dead) upstream: https://abf.io/soft/rosa-imagewriter
@@ -73,7 +73,7 @@ Version=1.0
 Name=OM Image Writer
 Comment=Tool for writing installer to USB drive
 Comment[ru]=Инструментарий записи загрузочных образов на USB-флэш
-Exec=%{_libdir}/%{name}/%{name} %%U
+Exec=pkexec %{_libdir}/%{name}/%{name} %%U
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -89,7 +89,7 @@ ServiceTypes=KonqPopupMenu/Plugin
 MimeType=application/x-iso;application/x-cd-image;inode/ISO-image
 
 [Desktop Action WriteIsoImageToUsb]
-Exec=%{_libdir}/%{name}/%{name} %%U
+Exec=pkexec %{_libdir}/%{name}/%{name} %%U
 Name=Write to USB using OM ImageWriter
 Name[ru]=Записать на USB, используя OM ImageWriter
 Icon=%{name}
