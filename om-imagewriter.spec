@@ -7,20 +7,26 @@
 
 Summary:	Tool for writing installer to USB drive
 Name:		om-imagewriter
-Version:	2.6.4.2
-Release:	2
+Version:	2.7.0
+Release:	1
 License:	GPLv3+
 Group:		File tools
 # Original (seemingly dead) upstream: https://abf.io/soft/rosa-imagewriter
 # Another interesting fork: https://github.com/KaOSx/isowriter
 Url:		https://github.com/OpenMandrivaSoftware/om-imagewriter
-Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{version}.tar.gz
-BuildRequires:	qmake-qt6
+#Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{version}.tar.gz
+Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{name}-%{version}.tar.xz
+Source1:	om-imagewriter.desktop
+Source2:	riw_write_iso_image.desktop
+
 BuildRequires:	pkgconfig(Qt6Linguist)
 BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(Qt6Svg)
 BuildRequires:	pkgconfig(Qt6Widgets)
 BuildRequires:	pkgconfig(udev)
+
+BuildSystem:		cmake
+
 Suggests:	%mklibname udev 1
 # (tpg) needed for kdesu
 Suggests:	kde-cli-tools >= 6.0.0
@@ -30,50 +36,18 @@ Suggests:	kde-cli-tools >= 6.0.0
 OpenMandriva Image Writer is a tool for creating bootable installation USB flash
 drives.
 
-%files
-%{_bindir}/%{name}
-%{_libdir}/%{name}
-%{_docdir}/%{name}
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/kio/servicemenus/*.desktop
-%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-
 #----------------------------------------------------------------------------
 
-%prep
-%autosetup -p1
-
-%build
-qmake-qt6
-
-make
-%{_qt6_bindir}/lrelease OMImageWriter.pro
-
-# for lrelease
-export PATH=%{_qt6_bindir}:$PATH
-lang/build-translations
-
-%install
-mkdir -p                                                   \
-	%{buildroot}%{_bindir}                             \
-	%{buildroot}%{_libdir}/%{name}/lang                \
-	%{buildroot}%{_docdir}/%{name}                     \
-	%{buildroot}%{_iconsdir}/hicolor/scalable/apps     \
-	%{buildroot}%{_datadir}/applications               \
-	%{buildroot}%{_datadir}/kio/servicemenus
-install -m 0755 OMImageWriter %{buildroot}%{_libdir}/%{name}/%{name}
-install -m 0644 lang/*.qm %{buildroot}%{_libdir}/%{name}/lang/
-install -m 0644 doc/* %{buildroot}%{_docdir}/%{name}/
-install -m 0644 res/icon-rosa.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-ln -sf %{_libdir}/%{name}/%{name} %{buildroot}%{_bindir}/%{name}
-
+%install -a
+mkdir -p  %{buildroot}%{_datadir}/applications/ \
+					%{buildroot}%{_datadir}/kio/servicemenus/
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Name=OM Image Writer
 Comment=Tool for writing installer to USB drive
 Comment[ru]=Инструментарий записи загрузочных образов на USB-флэш
-Exec=pkexec %{_libdir}/%{name}/%{name} %%U
+Exec=pkexec %{_bindir}/%{name}/%{name} %%U
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -89,10 +63,20 @@ ServiceTypes=KonqPopupMenu/Plugin
 MimeType=application/x-iso;application/x-cd-image;inode/ISO-image
 
 [Desktop Action WriteIsoImageToUsb]
-Exec=pkexec %{_libdir}/%{name}/%{name} %%U
+Exec=pkexec %{_bindir}/%{name}/%{name} %%U
 Name=Write to USB using OM ImageWriter
 Name[ru]=Записать на USB, используя OM ImageWriter
 Icon=%{name}
 EOF
 
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%files
+%license %{_licensedir}/%name/LICENSE.html
+%{_bindir}/%{name}
+%{_docdir}/%{name}
+%{_datadir}/polkit-1/actions/org.openmandriva.pkexec.om-imagewriter.policy
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/kio/servicemenus/*.desktop
+%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
+
