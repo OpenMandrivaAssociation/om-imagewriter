@@ -14,8 +14,7 @@ Group:		File tools
 # Original (seemingly dead) upstream: https://abf.io/soft/rosa-imagewriter
 # Another interesting fork: https://github.com/KaOSx/isowriter
 Url:		https://github.com/OpenMandrivaSoftware/om-imagewriter
-#Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{version}.tar.gz
-Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{name}-%{version}.tar.xz
+Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{version}.tar.gz
 Source1:	om-imagewriter.desktop
 Source2:	riw_write_iso_image.desktop
 
@@ -47,7 +46,7 @@ Version=1.0
 Name=OM Image Writer
 Comment=Tool for writing installer to USB drive
 Comment[ru]=Инструментарий записи загрузочных образов на USB-флэш
-Exec=pkexec %{_bindir}/%{name}/%{name} %%U
+Exec=pkexec %{_bindir}/%{name} %%U
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -63,7 +62,7 @@ ServiceTypes=KonqPopupMenu/Plugin
 MimeType=application/x-iso;application/x-cd-image;inode/ISO-image
 
 [Desktop Action WriteIsoImageToUsb]
-Exec=pkexec %{_bindir}/%{name}/%{name} %%U
+Exec=pkexec %{_bindir}/%{name} %%U
 Name=Write to USB using OM ImageWriter
 Name[ru]=Записать на USB, используя OM ImageWriter
 Icon=%{name}
