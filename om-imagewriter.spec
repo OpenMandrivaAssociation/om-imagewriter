@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(Qt6Core)
 BuildRequires:	pkgconfig(Qt6Svg)
 BuildRequires:	pkgconfig(Qt6Widgets)
 BuildRequires:	pkgconfig(udev)
+BuildRequires:	desktop-file-install
 
 BuildSystem:		cmake
 
