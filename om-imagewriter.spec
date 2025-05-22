@@ -15,8 +15,6 @@ Group:		File tools
 # Another interesting fork: https://github.com/KaOSx/isowriter
 Url:		https://github.com/OpenMandrivaSoftware/om-imagewriter
 Source0:	https://github.com/OpenMandrivaSoftware/om-imagewriter/archive/refs/tags/%{version}.tar.gz#/%name-%version.tar.gz
-Source1:	om-imagewriter.desktop
-Source2:	riw_write_iso_image.desktop
 
 BuildRequires:	pkgconfig(Qt6Linguist)
 BuildRequires:	pkgconfig(Qt6Core)
